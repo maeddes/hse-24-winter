@@ -41,10 +41,12 @@ By the end of this lecture, students will be able to:
 ---
 
 ### **Student/Review Questions**
+#### For now:
 1. What are the five essential characteristics of cloud computing according to NIST, and how do they apply to modern cloud services?
 2. Identify 3 main cloud providers.
 3. What are the differences between IaaS, PaaS, and SaaS? Give examples of each in today's cloud ecosystem.
 4. What is the CNCF, and why is it important in the context of cloud-native technologies?
+#### For later:
 5. How does Kubernetes help in managing containerized applications in cloud-native environments?
 6. What is eBPF, and what advantages does it provide in terms of system monitoring and security?
 7. Explain the role of OpenTelemetry in modern cloud systems. How does it contribute to observability?
