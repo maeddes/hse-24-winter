@@ -65,3 +65,7 @@ By the end of this lecture, students will be able to:
 ### Homework
 
 - Get a GitHub or GitLab or Bitbucket account
+
+## **2024 / 09 / 30 - Overview of distributed systems implementation options - Frameworks, Kubernetes, Service Meshes (sidecar-based and eBPF-based)
+
+## **2024 / 09 / 30 - Cloud-based IDEs
