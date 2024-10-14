@@ -157,7 +157,7 @@ By the end of this lecture, students will be able to:
 
 ---
 
-### ## **2024 / 10 / 7 - Multi-Container Applications with Docker **
+## **2024 / 10 / 7 - Multi-Container Applications with Docker **
 
    ![All in one](images/2024_17_10_multi_container_sample.png)
 
