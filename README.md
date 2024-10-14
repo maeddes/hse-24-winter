@@ -156,3 +156,63 @@ By the end of this lecture, students will be able to:
 - Work through the exercises
 
 ---
+
+### ## **2024 / 10 / 7 - Multi-Container Applications with Docker **
+
+   ![All in one](images/2024_17_10_multi_container_sample.png)
+
+### **Content Overview**
+1. **Multi-Container Applications**
+   - Introduction to the concept of multi-container applications.
+   - Understanding container isolation: how containers are isolated from each other and the host system to ensure security and resource control.
+   - **Port Mapping**: How port mapping allows external access to containerized applications while maintaining isolation between the container and the host network.
+   - **Executing a Shell in a Container for Debugging**: Using Docker to open a shell inside a running container to troubleshoot issues, inspect processes, or test the environment.
+
+   ![Isolation and network](images/2024_17_10_isolation%20concepts.png)
+
+2. **Creating Containerized Applications with Spring Boot**
+   - Building containerized applications using pre-built Spring Boot code.
+   - Writing and using Dockerfiles to package Spring Boot applications into containers.
+
+3. **Connecting Containers Using Docker Networks**
+   - Overview of Docker networking and its role in enabling communication between containers.
+   - Different types of Docker networks (bridge, host).
+
+4. **Docker Compose for Multi-Container Applications**
+   - Introduction to Docker Compose and its benefits for managing multi-container applications.
+   - Creating and running multi-container setups using `docker-compose.yml` to define and orchestrate services.
+
+---
+
+### **Learning Objectives**
+By the end of this lecture, students will be able to:
+- Explain the concept of multi-container applications and the importance of container isolation, including port mapping and shell access for debugging.
+- Create containerized Spring Boot applications using Dockerfiles.
+- Set up Docker networks to connect multiple containers and enable communication.
+- Use Docker Compose to define and manage multi-container applications in a streamlined way.
+
+---
+
+### **Student/Review Questions**
+1. What is container isolation, and why is it important in multi-container applications?
+2. How does port mapping work, and how does it maintain isolation between a container and the host system while allowing external access?
+3. How can you execute a shell inside a running container to debug an application? Provide an example of when this might be useful.
+4. How would you create a Dockerfile for a Spring Boot application to package it into a container?
+5. What is the role of Docker networks in multi-container applications, and what are the different network types?
+6. How does Docker Compose simplify the management of multi-container applications? Provide an example of how services are defined in a `docker-compose.yml` file.
+7. What are some advantages of using Docker Compose over manually running multiple containers with Docker commands?
+
+---
+
+### **Suggested Reading & Resources**
+- [Spring Boot Docker Guide](https://spring.io/guides/gs/spring-boot-docker/)
+- [Docker Networking Overview](https://docs.docker.com/network/)
+- [Docker Port Mapping](https://docs.docker.com/config/containers/container-networking/#published-ports)
+- [Using Docker Exec for Debugging](https://docs.docker.com/engine/reference/commandline/exec/)
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
+- [Best Practices for Multi-Container Applications](https://www.docker.com/blog/best-practices-for-writing-dockerfiles/)
+
+---
+
+### Homework
+- **DO THE DOCKER EXERCISES**
