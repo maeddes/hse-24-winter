@@ -66,6 +66,46 @@ By the end of this lecture, students will be able to:
 
 - Get a GitHub or GitLab or Bitbucket account
 
-## **2024 / 09 / 30 - Overview of distributed systems implementation options - Frameworks, Kubernetes, Service Meshes (sidecar-based and eBPF-based)
+## **2024 / 09 / 30 - Overview of distributed systems implementation options - Frameworks, Kubernetes, Service Meshes (sidecar-based and eBPF-based)**
 
-## **2024 / 09 / 30 - Cloud-based IDEs
+## **2024 / 09 / 30 - Cloud-based IDEs**
+
+## **2024 / 10 / 7 - Containers**
+### Content Overview
+
+1. Development in distributed teams withouth containers and the potential problems:
+   - Polyglot application landscapes are challenging as all work environments need to match all runtime requirements for all languages
+   - Transporting application from environment A to environment B introduces challenges and problems with mismatching runtimes
+
+   ![alt text](images/2024_10_07_distributeddevelopment.png)
+
+2. **Containers**
+   - Isolate Applications from each other
+   - Package Applications along with all Runtime requirements for easy execution and transportation between working environments
+   - Simplify configuration of working environments -> only container engine needed
+   - handling of all application containers through same mechanisms: docker build, docker run
+
+   ![alt text](images/2024_10_07_containerenvironment.png)
+
+3. **Docker**
+   - Docker ecosystem consists of the Docker Daemon, Docker CLI and Docker Hub+
+   - Creation of Dockerfiles
+   - Building Images
+   - Running Containers
+
+4. **Exercises**
+   - Exercises can be found at: https://lecture.new.trainings.nvtc.io/basics/container/
+
+### **Student/Review Questions**
+1. What is Docker, and how does it differ from traditional virtual machines?
+2. Explain the concept of a Docker image and a Docker container. How are they related?
+3. What are the main components of a Dockerfile? Describe the purpose of each component.
+4. How does Docker ensure isolation and security between containers?
+5. What is a container registry, and how do you use Docker Hub to share or deploy images?
+6. Describe the process of building and running a containerized application using Docker, including common commands.
+
+### Homework
+- Get a Dockerhub account
+- Work through the exercises
+
+---
