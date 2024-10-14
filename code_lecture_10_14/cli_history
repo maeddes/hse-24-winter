@@ -1,0 +1,183 @@
+    1  docker
+    2  docker pull maeddes/hsedemo:latest
+    3  docker pull maeddes/hsedemo
+    4  docker pull postgres:17
+    5  docker images
+    6  docker pull postgres
+    7  docker images
+   18  docker ps
+   29  docker build -t todoui:v24 .
+   31  docker images
+   32  docker run todoui:v24
+   34  docker run -p 8090:8090 --network todonet -d todoui:v24
+   35  docker ps
+   36  docker network inspect todonet
+   37  docker ps
+   38  docker stop $(docker ps -q)
+   39  docker ps
+   40  docker start 9fa
+   41  docker stop 9fa
+   45  docker rm $(docker ps -aq)
+   46  docker ps -a
+   48  docker run --name postgresdb -e POSTGRES_PASSWORD=password -e POSTGRES_USER=matthias -e POSTGRES_DB=mydb -d postgres
+   52  docker ps
+   53  docker stop 866
+   54  docker rm 866
+   55  docker run --name postgresdb -e POSTGRES_PASSWORD=password -e POSTGRES_USER=matthias -e POSTGRES_DB=mydb -p 5432:5432 -d postgres
+   63  docker ps
+   64  docker exec -it 8c5 /bin/bash
+   65  docker exec -it 8c5 /bin/sh
+   66  docker ps
+   68  docker exec env 58d
+   69  docker exec 58d env
+   70  docker exec ab7 env
+   71  docker exec 58d bash
+   72  docker exec 58d /bin/bash
+   73  docker exec 58d /bin/sh
+   74  docker exec -it 58d /bin/sh
+   77  docker ps
+   78  docker network ls
+   80  history | grep docker
+   81  history | grep docker > ../../code_lecture_10_14/cli_history
+    1  docker
+    2  docker pull maeddes/hsedemo:latest
+    3  docker pull maeddes/hsedemo
+    4  docker pull postgres:17
+    5  docker images
+    6  docker pull postgres
+    7  docker images
+   18  docker ps -a
+   19  docker network inspect todonet
+   20  docker ps
+   21  docker network connect todonet postgresdb
+   22  docker network inspect todonet
+   23  docker ps
+   24  docker stop $(docker ps -aq)
+   25  docker rm $(docker ps -aq)
+   26  docker network 
+   27  docker network rm todonet
+   28  docker images
+   30  cat docker-compose.yaml 
+   31  docker compose up
+    1  docker
+    2  docker pull maeddes/hsedemo:latest
+    3  docker pull maeddes/hsedemo
+    4  docker pull postgres:17
+    5  docker images
+    6  docker pull postgres
+    7  docker images
+   28  docker build -t myapp:latest .
+   29  docker images
+   30  docker tag
+   31  docker tag myapp:latest todobackend:v24
+   32  docker images
+   33  docker run -p 8080:8080 myapp:latest
+   35  $ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+   36  $ docker run --name postgresdb -e POSTGRES_PASSWORD=password -POSTGRES_USER=matthias -POSTGRES_DB=mydb -p 5432:5432 -d postgres
+   37  docker run --name postgresdb -e POSTGRES_PASSWORD=password -POSTGRES_USER=matthias -POSTGRES_DB=mydb -p 5432:5432 -d postgres
+   38  docker run --name postgresdb -e POSTGRES_PASSWORD=password -e POSTGRES_USER=matthias -e POSTGRES_DB=mydb -p 5432:5432 -d postgres
+   39  docker ps
+   41  docker run -p 8080:8080 myapp:latest
+   43  docker network
+   44  docker network create todonet
+   45  docker network list
+   46  docker ps -a
+   47  docker ps
+   49  docker ps
+   50  docker network connect
+   51  docker network connect todonet postgresdb
+   52  docker network inspect todonet
+   53  docker run --help
+   54  docker run -p 8080:8080 --network todonet --name todobackend todobackend:latest
+   55  docker run -p 8080:8080 --network todonet --name todobackend todobackend:v24
+   63  docker ps
+   65  docker run -p 8080:8080 -e POSTGRES_HOST localhost --network todonet --name todobackend todobackend:v24
+   66  docker images
+   67  docker run -p 8080:8080 -e POSTGRES_HOST=localhost --network todonet --name todobackend todobackend:v24
+   68  docker ps -a
+   69  docker rm edc
+   70  docker ps -a
+   71  docker rm 5edc
+   72  docker ps -a
+   73  docker run -p 8080:8080 --network todonet --name todobackend todobackend:v24
+   74  docker ps -a
+   75  docker rm 1c5
+   76  docker ps
+   77  docker run -p 8080:8080 --network todonet -e SPRING_PORFILES_ACTIVE=dev --name todobackend todobackend:v24
+   78  docker ps
+   79  docker rm ab7
+   80  docker run -p 8080:8080 --network todonet -e SPRING_PROFILES_ACTIVE=dev --name todobackend todobackend:v24
+   81  docker ps
+   82  docker ps -a
+   83  docker rm b9a
+   84  docker run -p 8080:8080 --network todonet -e SPRING_PROFILES_ACTIVE=dev --name todobackend todobackend:v24
+   85  docker run -p 8080:8080 --network todonet --name todobackend todobackend:v24
+   86  docker ps
+   87  docker ps -a
+   88  docker rm 8c5
+   89  docker run -p 8080:8080 --network todonet --name todobackend todobackend:v24
+   91  history | grep docker >> ../../code_lecture_10_14/cli_history
+   94  docker ps -a
+   95  docker network inspect todonet
+   96  docker ps
+   97  docker network connect todonet postgresdb
+   98  docker network inspect todonet
+   99  docker ps
+  100  docker stop $(docker ps -aq)
+  101  docker rm $(docker ps -aq)
+  102  docker network 
+  103  docker network rm todonet
+  104  docker images
+  106  cat docker-compose.yaml 
+  107  docker compose up
+  108  history | grep docker > ../../code_lecture_10_14/cli_history
+  109  history | grep docker > ../code_lecture_10_14/cli_history
+  110  history | grep docker >> ../code_lecture_10_14/cli_history
+  112  docker ps
+  123  docker build -t todoui:v24 .
+  125  docker images
+  126  docker run todoui:v24
+  128  docker run -p 8090:8090 --network todonet -d todoui:v24
+  129  docker ps
+  130  docker network inspect todonet
+  131  docker ps
+  132  docker stop $(docker ps -q)
+  133  docker ps
+  134  docker start 9fa
+  135  docker stop 9fa
+  139  docker rm $(docker ps -aq)
+  140  docker ps -a
+  141  docker run --name postgresdb -e POSTGRES_PASSWORD=password -POSTGRES_USER=matthias -POSTGRES_DB=mydb -d postgres
+  142  docker run --name postgresdb -e POSTGRES_PASSWORD=password -e POSTGRES_USER=matthias -e POSTGRES_DB=mydb -d postgres
+  146  docker ps
+  147  docker stop 866
+  148  docker rm 866
+  149  docker run --name postgresdb -e POSTGRES_PASSWORD=password -e POSTGRES_USER=matthias -e POSTGRES_DB=mydb -p 5432:5432 -d postgres
+  157  docker ps
+  158  docker exec -it 8c5 /bin/bash
+  159  docker exec -it 8c5 /bin/sh
+  160  docker ps
+  162  docker exec env 58d
+  163  docker exec 58d env
+  164  docker exec ab7 env
+  165  docker exec 58d bash
+  166  docker exec 58d /bin/bash
+  167  docker exec 58d /bin/sh
+  168  docker exec -it 58d /bin/sh
+  171  docker ps
+  172  docker network ls
+  174  history | grep docker
+  175  history | grep docker > ../../code_lecture_10_14/cli_history
+  178  history | grep docker >> ./code_lecture_10_14/cli_history
+   61  curl localhost:8080/hello
+  113  curl
+  114  curl -X POST localhost:8080/todos/NEW
+  144  curl --help
+  145  curl telnet://localhost:5432
+  150  curl telnet://localhost:5432
+  152  curl localhost:8080/hello
+  153  curl localhost:8080/todos/
+  154  curl -X POST T localhost:8080/todos/NEW
+  155  curl -X POST localhost:8080/todos/NEW
+  156  curl localhost:8080/todos/
+  179  history | grep curl >> ./code_lecture_10_14/cli_history

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    image: postgres
+    container_name: postgresdb
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: matthias
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - todonet
+
+  todobackend:
+    image: todobackend:v24
+    container_name: todobackend
+    ports:
+      - "8080:8080"
+    networks:
+      - todonet
+    restart: always
+    depends_on:
+      - postgresdb
+
+  todoui:
+    image: todoui:v24
+    container_name: todoui
+    ports:
+      - "8090:8090"
+    networks:
+      - todonet
+    restart: always
+
+networks:
+  todonet:
+    driver: bridge
