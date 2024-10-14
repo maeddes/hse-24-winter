@@ -69,6 +69,53 @@ By the end of this lecture, students will be able to:
 ## **2024 / 09 / 30 - Overview of distributed systems implementation options - Frameworks, Kubernetes, Service Meshes (sidecar-based and eBPF-based)**
 
 ## **2024 / 09 / 30 - Cloud-based IDEs**
+### **Content Overview**
+
+1. **Reasons for Distributed Systems: Heterogeneity and Resilience**
+   - Why distributed systems? The need for handling heterogeneous environments (multiple platforms, languages, and architectures).
+   - Achieving resilience in modern systems: ensuring fault tolerance, scalability, and high availability in distributed environments.
+
+2. **Implementation Options for Distributed Systems**
+   - Overview of software frameworks for distributed systems (e.g., Spring Boot).
+   - Platforms enabling distributed architectures: Kubernetes and its orchestration capabilities.
+   - Extensions: service meshes (e.g., Istio, Linkerd) for enhancing communication and security.
+   - Exploring new capabilities through eBPF for controlling network traffic.
+
+3. **Overview of Cloud-Based IDEs**
+   - Introduction to cloud-based integrated development environments (IDEs).
+   - **GitHub Codespaces**: Full development environments in the cloud.
+   - **Gitpod**: Automating and provisioning cloud-based workspaces for development.
+   - Benefits of cloud-based IDEs for distributed systems development.
+
+---
+
+### **Learning Objectives**
+By the end of this lecture, students will be able to:
+- Explain the importance of heterogeneity and resilience as key drivers for distributed systems.
+- Identify different implementation options for building distributed systems using frameworks, platforms, and extensions.
+- Compare the features of traditional service meshes and newer approaches leveraging eBPF.
+- Explain the advantages of using cloud-based IDEs, such as GitHub Codespaces and Gitpod, for distributed system development.
+- Demonstrate an understanding of how these tools enhance collaboration and scalability in cloud-native environments.
+
+---
+
+### **Student/Review Questions**
+1. Why are heterogeneity and resilience important factors in the design of distributed systems?
+2. What are the main differences between a software framework (e.g., Spring Boot) and a platform (e.g., Kubernetes) when building distributed systems?
+3. How do service meshes like Istio or Linkerd improve communication in microservices architectures?
+4. What is eBPF, and how does it enhance service mesh capabilities in modern cloud-native systems?
+5. Analyze GitHub Codespaces and Gitpod. What are the key features that make them suitable for developing distributed systems?
+6. What are the main benefits of using cloud-based IDEs compared to traditional, local development environments?
+
+---
+
+### **Suggested Reading & Resources**
+- [Introduction to Spring Boot for Microservices](https://spring.io/projects/spring-boot)
+- [Kubernetes Documentation](https://kubernetes.io/docs/home/)
+- [Service Mesh Overview](https://istio.io/latest/docs/concepts/what-is-istio/)
+- [eBPF - A New Frontier](https://ebpf.io/)
+- [GitHub Codespaces Documentation](https://github.com/features/codespaces)
+- [Gitpod Documentation](https://www.gitpod.io/docs)
 
 ## **2024 / 10 / 7 - Containers**
 ### Content Overview
