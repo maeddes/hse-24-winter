@@ -305,6 +305,11 @@ By the end of this lecture, students will be able to:
 - Understand and apply REST principles, including HTTP methods, status codes, and idempotency, to design effective APIs.
 - Recognize different levels of RESTful API maturity and their implications for API design.
 
+### **ABOVE ALL**
+
+Be able to relate the concepts of CAP theorem and the 12-factor apps to the technologies we are covering in the lecture,
+e.g. how do technologies like Spring Boot (or other frameworks/languages), Docker, Kubernetes incorporate or implement those aspects
+
 ---
 
 ### **Student/Review Questions**
@@ -319,6 +324,17 @@ By the end of this lecture, students will be able to:
 9. What is idempotency, and why is it important in the context of REST APIs? Provide an example of an idempotent HTTP method.
 10. Describe the levels of Richardson’s Maturity Model. Why is each level a step toward a more RESTful API?
 
+X. Describe the factor of configuration, why is it important in distributed systems (theory) and how is it being implemented in
+Spring Boot, Docker and Kubernetes. Provide examples.
+
+Spring Boot: app.props (e.g. DB config, ports(!)), ..., ...
+
+XI. Which effects does it have, if you store the port configuration in the source code? -> It can never be changed without a rebuilt. You externalize the part of the configuration you want to be able to change
+
+XII. Why is this factor more important on a distributed system than a "monolithic one"? ... configuration ... in a distributed environment ... will change, it needs to be dynamically changeable (without rebuilt!)
+
+XIII. Why is the dockerfile not the part for external configuration? How would you apply external configuration in a docker environment? docker-compose(environment), docker run (-e, -p)
+
 ---
 
 ### **Suggested Reading & Resources**
@@ -330,3 +346,4 @@ By the end of this lecture, students will be able to:
 - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [Richardson's Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html)
 
+## **2024 / 11 / 04 - 12-factor configuration recap and lab lookout** 
