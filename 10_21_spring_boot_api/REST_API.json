@@ -1,106 +1,155 @@
 
 {
-    "openapi": "3.0.1",
-    "info": {
-      "title": "OpenAPI definition",
-      "version": "v0"
-    },
-    "servers": [
-      {
-        "url": "https://fluffy-halibut-v66rg7rj7g92v94-8080.app.github.dev",
-        "description": "Generated server url"
-      }
-    ],
-    "paths": {
-      "/api/shopping/{name}": {
-        "get": {
-          "tags": [
-            "shopping-controller"
-          ],
-          "operationId": "getItemByName",
-          "parameters": [
-            {
-              "name": "name",
-              "in": "path",
-              "required": true,
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK",
-              "content": {
-                "*/*": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ShoppingItem"
-                  }
-                }
-              }
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "SET.YOUR.URL.HERE",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/shopping/{name}": {
+      "get": {
+        "tags": [
+          "shopping-controller"
+        ],
+        "summary": "Retrieve a shopping item by name",
+        "description": "Fetches a shopping item based on the provided name.",
+        "operationId": "getItemByName",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of the shopping item to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
-        },
-        "put": {
-          "tags": [
-            "shopping-controller"
-          ],
-          "operationId": "updateItem",
-          "parameters": [
-            {
-              "name": "name",
-              "in": "path",
-              "required": true,
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
-          "requestBody": {
+        ],
+        "responses": {
+          "200": {
+            "description": "Item found and retrieved successfully.",
             "content": {
-              "application/json": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ShoppingItem"
                 }
               }
-            },
-            "required": true
+            }
           },
-          "responses": {
-            "200": {
-              "description": "OK",
-              "content": {
-                "*/*": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ShoppingItem"
-                  }
+          "404": {
+            "description": "Item not found.",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingItem"
                 }
               }
             }
           }
-        },
-        "delete": {
-          "tags": [
-            "shopping-controller"
-          ],
-          "operationId": "deleteItem",
-          "parameters": [
-            {
-              "name": "name",
-              "in": "path",
-              "required": true,
+        }
+      },
+      "put": {
+        "tags": [
+          "shopping-controller"
+        ],
+        "summary": "Update an existing shopping item",
+        "description": "Updates the amount of an existing item.",
+        "operationId": "updateItem",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of the item to update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/ShoppingItem"
               }
             }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK",
-              "content": {
-                "*/*": {
-                  "schema": {
-                    "type": "string"
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Item updated successfully.",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingItem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Item not found.",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingItem"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "shopping-controller"
+        ],
+        "summary": "Delete a shopping item",
+        "description": "Removes an item from the list based on the provided name.",
+        "operationId": "deleteItem",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of the item to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Item deleted successfully."
+          },
+          "404": {
+            "description": "Item not found."
+          }
+        }
+      }
+    },
+    "/api/shopping": {
+      "get": {
+        "tags": [
+          "shopping-controller"
+        ],
+        "summary": "Retrieve all shopping items",
+        "description": "Fetches all shopping items in the list.",
+        "operationId": "getAllItems",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the list of items.",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ShoppingItem"
                   }
                 }
               }
@@ -108,51 +157,30 @@
           }
         }
       },
-      "/api/shopping": {
-        "get": {
-          "tags": [
-            "shopping-controller"
-          ],
-          "operationId": "getAllItems",
-          "responses": {
-            "200": {
-              "description": "OK",
-              "content": {
-                "*/*": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/ShoppingItem"
-                    }
-                  }
-                }
+      "post": {
+        "tags": [
+          "shopping-controller"
+        ],
+        "summary": "Add a new shopping item",
+        "description": "Adds a new shopping item to the list.",
+        "operationId": "addItem",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShoppingItem"
               }
             }
-          }
+          },
+          "required": true
         },
-        "post": {
-          "tags": [
-            "shopping-controller"
-          ],
-          "operationId": "addItem",
-          "requestBody": {
+        "responses": {
+          "201": {
+            "description": "Item successfully created.",
             "content": {
-              "application/json": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ShoppingItem"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "200": {
-              "description": "OK",
-              "content": {
-                "*/*": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ShoppingItem"
-                  }
                 }
               }
             }
@@ -160,20 +188,72 @@
         }
       }
     },
-    "components": {
-      "schemas": {
-        "ShoppingItem": {
-          "type": "object",
-          "properties": {
-            "name": {
+    "/hello": {
+      "get": {
+        "tags": [
+          "api-application"
+        ],
+        "operationId": "sayHello",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hello/{name}": {
+      "get": {
+        "tags": [
+          "api-application"
+        ],
+        "operationId": "greetByName",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
               "type": "string"
-            },
-            "amount": {
-              "type": "integer",
-              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             }
           }
         }
       }
     }
+  },
+  "components": {
+    "schemas": {
+      "ShoppingItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "description": "Shopping item to add"
+      }
+    }
   }
+}

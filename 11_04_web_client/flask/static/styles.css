@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+h2 {
+    color: #333;
+}
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.alert.success { background-color: #4CAF50; }
+.alert.error { background-color: #f44336; }
+input, button {
+    margin: 5px 0;
+}

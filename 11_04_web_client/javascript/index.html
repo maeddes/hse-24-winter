@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List Manager</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h2 { color: #333; }
+        .item { margin-bottom: 15px; }
+        button { cursor: pointer; }
+        input, button { margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Shopping List Manager</h1>
+
+    <h2>All Shopping Items</h2>
+    <div id="itemList"></div>
+    <button onclick="getAllItems()">Refresh Items</button>
+
+    <h2>Add a New Item</h2>
+    <div>
+        <input type="text" id="newItemName" placeholder="Name">
+        <input type="number" id="newItemAmount" placeholder="Amount">
+        <button onclick="addItem()">Add Item</button>
+    </div>
+
+    <h2>Update Item</h2>
+    <div>
+        <input type="text" id="updateItemName" placeholder="Name of item to update">
+        <input type="number" id="updateItemAmount" placeholder="New amount">
+        <button onclick="updateItem()">Update Item</button>
+    </div>
+
+    <h2>Delete Item</h2>
+    <div>
+        <input type="text" id="deleteItemName" placeholder="Name of item to delete">
+        <button onclick="deleteItem()">Delete Item</button>
+    </div>
+
+    <div id="message"></div>
+</div>
+
+<script>
+    const apiUrl = 'http://localhost:8080/api/shopping';
+
+    // Fetch all items
+    function getAllItems() {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const itemList = document.getElementById('itemList');
+                itemList.innerHTML = '';
+                data.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'item';
+                    itemDiv.innerText = `Name: ${item.name}, Amount: ${item.amount}`;
+                    itemList.appendChild(itemDiv);
+                });
+            })
+            .catch(error => showMessage('Error fetching items: ' + error));
+    }
+
+    // Add a new item
+    function addItem() {
+        const name = document.getElementById('newItemName').value;
+        const amount = document.getElementById('newItemAmount').value;
+
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, amount: parseInt(amount) })
+        })
+        .then(response => {
+            if (response.ok) {
+                showMessage('Item added successfully!');
+                getAllItems();
+            } else {
+                showMessage('Error adding item.');
+            }
+        })
+        .catch(error => showMessage('Error adding item: ' + error));
+    }
+
+    // Update an item
+    function updateItem() {
+        const name = document.getElementById('updateItemName').value;
+        const amount = document.getElementById('updateItemAmount').value;
+
+        fetch(`${apiUrl}/${name}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ amount: parseInt(amount) })
+        })
+        .then(response => {
+            if (response.ok) {
+                showMessage('Item updated successfully!');
+                getAllItems();
+            } else {
+                showMessage('Error updating item. Item might not exist.');
+            }
+        })
+        .catch(error => showMessage('Error updating item: ' + error));
+    }
+
+    // Delete an item
+    function deleteItem() {
+        const name = document.getElementById('deleteItemName').value;
+
+        fetch(`${apiUrl}/${name}`, { method: 'DELETE' })
+            .then(response => {
+                if (response.ok) {
+                    showMessage('Item deleted successfully!');
+                    getAllItems();
+                } else {
+                    showMessage('Error deleting item. Item might not exist.');
+                }
+            })
+            .catch(error => showMessage('Error deleting item: ' + error));
+    }
+
+    // Show a message to the user
+    function showMessage(message) {
+        const messageDiv = document.getElementById('message');
+        messageDiv.innerText = message;
+        setTimeout(() => messageDiv.innerText = '', 3000);
+    }
+
+    // Fetch items initially when the page loads
+    document.addEventListener('DOMContentLoaded', getAllItems);
+</script>
+
+</body>
+</html>
