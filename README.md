@@ -216,3 +216,117 @@ By the end of this lecture, students will be able to:
 
 ### Homework
 - **DO THE DOCKER EXERCISES**
+
+
+## **2024 / 10 / 21 - Spring Boot Introduction & Cloud-based IDEs** 
+
+### **Content Overview**
+
+1. **Introduction to Spring Boot**
+   - **Evolution of Spring to Spring Boot**: Understanding how Spring Boot simplifies Spring applications, focusing on convention over configuration.
+   - **Spring Initializr**: A web-based tool for quickly creating Spring Boot projects with customizable dependencies.
+   - **Key Dependencies**:
+     - **Web**: Building RESTful web services and web applications.
+     - **Actuator**: Providing production-ready features such as monitoring and health checks.
+   - **application.properties**: Configuration of application settings in Spring Boot projects.
+   - **Spring Boot Project Structure**: Understanding the typical structure of a Spring Boot project and how it facilitates development.
+   - **OpenAPI**: Use the OpenAPI dependency to make the REST API definition universally available and accessible through a JSON format and the Swagger UI
+
+2. **Overview of Cloud-Based IDEs**
+   - **GitHub Codespaces**: Cloud-hosted development environments integrated with GitHub, enabling easy setup and collaboration.
+   - **Gitpod**: Automating cloud-based development workspaces with pre-configured environments.
+   - Advantages of cloud-based IDEs for Spring Boot development: instant setup, collaboration, and scalability.
+
+---
+
+### **Learning Objectives**
+By the end of this lecture, students will be able to:
+- Describe the evolution of Spring to Spring Boot and how Spring Boot improves application development.
+- Use Spring Initializr to create Spring Boot projects with appropriate dependencies.
+- Understand and configure application properties using `application.properties` in Spring Boot.
+- Identify the key components and structure of a typical Spring Boot project.
+- Create a REST API using Spring Boot by using common annotations.
+- Extend the Spring Boot dependencies to use OpenAPI and Swagger UI.
+- Compare GitHub Codespaces and Gitpod, and explain how cloud-based IDEs enhance Spring Boot development workflows.
+
+---
+
+### **Student/Review Questions**
+1. Describe basic core concepts of Spring Boot.
+2. How does Spring Initializr simplify the creation of Spring Boot projects, and what are some essential dependencies you might include?
+3. What role does the `application.properties` file play in a Spring Boot project?
+4. Explain the typical structure of a Spring Boot project. Why is this structure useful for developers?
+5. What do the annotations `@RestController`, `@PathVariable` and `@RequestMapping` do?
+6. What are the key benefits of using a cloud-based IDE over a local development environment for a cloud-native application in general and a Spring Boot project in particular?
+
+---
+
+### **Suggested Reading & Resources**
+- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
+- [Spring Initializr](https://start.spring.io/)
+- [Spring Boot Actuator Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
+- [GitHub Codespaces Documentation](https://github.com/features/codespaces)
+- [Gitpod Documentation](https://www.gitpod.io/docs)
+
+### Homework
+- **Rebuild the sample of the lecture**
+
+Here's the documentation for today’s longer lecture:
+
+---
+
+## **2024 / 10 / 28 - Cloud-Native Theory and REST APIs**  
+
+### **Content Overview**
+
+1. **Distributed Systems Theory**
+   - **CAP Theorem**: Understanding the trade-offs between Consistency, Availability, and Partition Tolerance in distributed systems.
+   - **Conway's Law**: Exploring how software design reflects organizational structure and its implications for distributed systems.
+   - **12-Factor Applications**: Best practices for building scalable, maintainable applications, focusing on principles like configuration, dependencies, and logging.
+   - **Microservices**: Basic concept of microservices, its advantages, and challenges in distributed systems.
+
+2. **API and REST**
+   - **HTTP Basics**: Core concepts of HTTP for APIs, including request/response structure.
+   - **Introduction to REST**: Understanding the foundational ideas of REST as defined by Roy Fielding and how RESTful APIs communicate.
+   - **Nouns and Verbs**: Structuring REST APIs around resources (nouns) and actions (verbs).
+   - **Representation**: Data formats in REST (e.g., JSON, XML) and the role of content negotiation.
+   - **HTTP Return Codes**: Standard HTTP status codes, their meanings, and when to use each in API responses.
+   - **Idempotency**: Ensuring repeatable requests yield the same results to prevent unintended side effects.
+   - **Richardson's Maturity Model**: Levels of RESTful maturity, from Level 0 (HTTP as a tunnel) to Level 3 (HATEOAS), to understand API design progression.
+
+---
+
+### **Learning Objectives**
+By the end of this lecture, students will be able to:
+- Describe the CAP Theorem, its components, and how it affects design choices in distributed systems.
+- Explain Conway’s Law and its influence on software architecture, especially in the context of microservices.
+- List and apply the 12 factors for building scalable, portable, and maintainable applications.
+- Define and differentiate microservices architecture from other architectural styles.
+- Understand and apply REST principles, including HTTP methods, status codes, and idempotency, to design effective APIs.
+- Recognize different levels of RESTful API maturity and their implications for API design.
+
+---
+
+### **Student/Review Questions**
+1. What are the components of the CAP Theorem, and why can’t a distributed system fully achieve all three?
+2. How does Conway’s Law impact the structure of a distributed system, especially when adopting a microservices architecture?
+3. What are the key factors of a 12-factor app, and how do they contribute to application scalability and resilience?
+4. Describe microservices concepts and some of its advantages over a monolithic architecture.
+5. What are the basic components of HTTP and their role in RESTful APIs?
+6. Who is Roy Fielding, and what are the core principles of REST as outlined in his dissertation?
+7. In RESTful API design, why is it essential to distinguish between nouns and verbs? Provide an example of an appropriate noun-verb pairing in a REST API.
+8. List at least three common HTTP status codes and explain their meanings.
+9. What is idempotency, and why is it important in the context of REST APIs? Provide an example of an idempotent HTTP method.
+10. Describe the levels of Richardson’s Maturity Model. Why is each level a step toward a more RESTful API?
+
+---
+
+### **Suggested Reading & Resources**
+- [Understanding the CAP Theorem](https://cs.uwaterloo.ca/~kmsalem/courses/CS848/W16/readings/cap.pdf)
+- [Conway’s Law - A Key Consideration in Architecture](https://www.thoughtworks.com/insights/blog/conways-law-and-modern-software-factories)
+- [The Twelve-Factor App](https://12factor.net/)
+- [Microservices Architecture Documentation](https://microservices.io/patterns/microservices.html)
+- [Roy Fielding’s REST Dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [Richardson's Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html)
+
