@@ -4,6 +4,8 @@
 
 In this lab, you will design and implement either a frontend or backend application using your chosen framework, adhering to core principles of distributed systems and cloud-native development. Follow the instructions carefully, ensuring proper external configuration and applying the 12-factor methodology.
 
+Put your names, repos and technologies into the spreadsheet. Don't reuse technologies already listed.
+
 ### **General Requirements**
 
 1. **Application Setup**
@@ -38,7 +40,7 @@ In this lab, you will design and implement either a frontend or backend applicat
 ### **Client-Side/Frontend Instructions**
 
 1. **Framework Selection**  
-   - Use a framework that supports server-side rendering (SSR) for easier configuration and adaptability in distributed systems.
+   - Use a framework that supports **other than Python Flask** server-side rendering (SSR) for easier configuration and adaptability in distributed systems.
 
 2. **External Communication**  
    - Ensure that the client application can communicate with the backend on a non-localhost network to simulate real-world deployment.
