@@ -391,26 +391,24 @@ By the end of this lecture, students will be able to:
 
 ### **Content Overview**
 
+Certainly! Here’s the revised summary with a more concise structure for points 2, 3, and 4:
+
+---
+
+### **Content Overview**
+
 1. **Introduction to Persistence, ORM, Spring Data, and Spring Data JPA**
-   - **Persistence**: Covered the importance of persistence in applications, which allows data to be stored and retrieved across sessions and restarts. Explained why a database-backed approach is preferable for production applications compared to in-memory solutions like `ArrayList`.
-   - **Object-Relational Mapping (ORM)**: Introduced ORM as a technique for mapping application objects to database tables, simplifying data manipulation and reducing boilerplate code. Explained ORM’s role in enabling more seamless interactions with relational databases.
-   - **Spring Data**: Provided an overview of Spring Data, a Spring module that simplifies data access by reducing repetitive code and offering a consistent programming model across data storage types.
-   - **Spring Data JPA**: Discussed Spring Data JPA as a specialized implementation of Spring Data tailored to Java Persistence API (JPA) usage, allowing us to interact with relational databases using repository interfaces. Explained the benefits of JPA repositories, including CRUD operations and query generation.
+   - **Persistence and ORM**: Discussed the importance of persistence for long-term data storage, introducing ORM as a way to map objects to relational database tables seamlessly.
+   - **Spring Data JPA**: Explored how Spring Data JPA simplifies data access through repository interfaces, enabling easy CRUD operations and custom queries without boilerplate code.
 
-2. **Spring Boot Application Enhancements**  
-   - Transitioned the shopping list app from using an `ArrayList` for storage to a relational database with **Spring Data JPA** and **PostgreSQL** integration.
-   - Created endpoints for CRUD operations, implemented a repository interface to manage shopping list items, and added a custom `getItemByName` method.
-   - Added logic to handle duplicate item names by increasing their amount instead of creating new entries, leveraging Spring Data JPA’s powerful querying capabilities.
+2. **Enhancing the Spring Boot Application with PostgreSQL**  
+   - Transitioned the shopping list storage from `ArrayList` to a **PostgreSQL database** using Spring Data JPA, refining endpoints for CRUD operations and adding logic to update item quantities based on names.
 
-3. **Flask Frontend Setup**  
-   - Developed a **Flask frontend** to interact with the Spring Boot API, allowing students to create a basic user interface for interacting with the shopping list.
-   - Configured the Flask app to read the **API URL** from an environment variable, supporting flexible connections to the backend environment.
-   - Verified that the Flask interface could successfully perform actions such as adding, updating, and deleting items on the shopping list by interacting with the REST API endpoints.
+3. **Developing a Flask Frontend**  
+   - Built a **Flask-based frontend** for interacting with the Spring Boot API, configuring the Flask app to retrieve the **API URL** from environment variables and perform **CRUD** actions on shopping list items.
 
-4. **Dockerizing the Spring Boot and Flask Applications**  
-   - Guided students through creating a Docker image for the Spring Boot app and the Flask frontend, along with configuration of a **Docker Compose** file to orchestrate both services along with PostgreSQL.
-   - Demonstrated how **Docker Compose** enables easy deployment and configuration of multi-container applications by defining all components in a single, reusable setup file.
-   - Discussed best practices for containerizing the Spring Boot app with PostgreSQL for persistence and the Flask app for frontend interactions, ensuring portability and streamlined setup for the full application stack.
+4. **Dockerizing the Application Stack with Docker Compose**  
+   - Containerized both the Spring Boot and Flask apps using **Dockerfiles** alongside PostgreSQL and  using a single **Docker Compose file** to manage and deploy the full application stack in a multi-container environment.
 
 ---
 
@@ -424,7 +422,6 @@ By the end of this lecture, students will be able to:
 
 *Exercise*:
 Use this as a reference implementation to build your component as described in [Lab Exercise](./LABS.md)
-
 
 ---
 
