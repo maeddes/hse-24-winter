@@ -40,7 +40,7 @@ Put your names, repos and technologies into the spreadsheet. Don't reuse technol
 ### **Client-Side/Frontend Instructions**
 
 1. **Framework Selection**  
-   - Use a framework that supports **other than Python Flask** server-side rendering (SSR) for easier configuration and adaptability in distributed systems.
+   - Use a framework **other than Python Flask** that supports server-side rendering (SSR) for easier configuration and adaptability in distributed systems.
 
 2. **External Communication**  
    - Ensure that the client application can communicate with the backend on a non-localhost network to simulate real-world deployment.
