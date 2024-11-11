@@ -305,6 +305,11 @@ By the end of this lecture, students will be able to:
 - Understand and apply REST principles, including HTTP methods, status codes, and idempotency, to design effective APIs.
 - Recognize different levels of RESTful API maturity and their implications for API design.
 
+### **ABOVE ALL**
+
+Be able to relate the concepts of CAP theorem and the 12-factor apps to the technologies we are covering in the lecture,
+e.g. how do technologies like Spring Boot (or other frameworks/languages), Docker, Kubernetes incorporate or implement those aspects
+
 ---
 
 ### **Student/Review Questions**
@@ -329,4 +334,53 @@ By the end of this lecture, students will be able to:
 - [Roy Fielding’s REST Dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
 - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [Richardson's Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html)
+
+## **2024 / 11 / 04 - 12-factor configuration recap and lab lookout**  
+
+### **Content Overview**
+
+1. **Recap of 12-Factor Configuration**
+   - **Separation of Configuration from Code**: Reinforcing the principle of externalizing configuration to make applications more flexible and scalable, especially in distributed environments.
+   - **Environment Variables for Configuration**: Understanding the use of environment variables for managing application settings across various environments (development, staging, production).
+   - **Configuration in Modern Technologies**:
+     - **Spring Boot**: Managing settings such as database connections and ports using `application.properties` or `application.yml` files to keep them outside the core application logic.
+     - **Docker**: Externalizing configuration with `docker-compose` files, `docker run` commands (e.g., `-e` for environment variables and `-p` for port mapping), and avoiding hardcoding in Dockerfiles to support flexibility.
+     - **Kubernetes**: Using ConfigMaps and Secrets to manage application settings, making it easy to adjust configurations dynamically without rebuilding containers.
+
+2. **Lookout on lab**
+
+---
+
+### **Learning Objectives**
+By the end of this lecture, students will be able to:
+- Explain the importance of separating configuration from code, specifically in the context of distributed systems.
+- Relate the configuration principle of the 12-factor methodology to technologies such as Spring Boot, Docker, and Kubernetes.
+- Describe how these technologies implement configuration externalization to support flexibility, scalability, and best practices in distributed systems.
+- Discuss the impact of improper configuration management in distributed systems and the challenges of maintaining dynamic configuration across different environments.
+
+---
+
+### **Student/Review Questions**
+
+1. Describe the configuration factor in the 12-factor methodology. Why is it essential for distributed systems, and how is it implemented in Spring Boot, Docker, and Kubernetes?  
+   *Example Answer: In distributed systems, configuration often varies between environments. Spring Boot uses `application.properties` files for settings like database connections and ports, Docker supports configuration via `docker-compose` and `docker run` options, and Kubernetes uses ConfigMaps and Secrets.*
+
+2. What happens if you store port configuration directly in your source code?  
+   *Answer: The port configuration becomes fixed, requiring a rebuild of the application if changes are needed. Externalizing this allows easy updates without code changes.*
+
+3. Why is external configuration more crucial for a distributed system than a monolithic application?  
+   *Answer: Distributed systems often require dynamic configuration changes across multiple services or containers, whereas monolithic applications generally have fewer, more static configuration needs.*
+
+4. Why isn’t the Dockerfile suited for storing external configurations? How can you apply configurations in a Docker environment?  
+   *Answer: Dockerfiles are designed for building images, not for external settings that may change. Configuration should be applied at runtime using `docker-compose` or the `docker run` command with `-e` for environment variables and `-p` for port mapping.*
+
+---
+
+### **Suggested Reading & Resources**
+- [The Twelve-Factor App: Configuration](https://12factor.net/config)
+- [Spring Boot Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+- [Docker Environment Variables and Configurations](https://docs.docker.com/compose/environment-variables/)
+- [Kubernetes ConfigMaps and Secrets](https://kubernetes.io/docs/concepts/configuration/)
+
+---
 
