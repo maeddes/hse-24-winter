@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  shoppingdb: #will be hostname within docker network
+    image: postgres
+    environment:
+      POSTGRES_USER: hse24
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: shoppingdb
+    ports:
+      - "5432:5432"
+
+  backendspringboot:
+    image: maeddes/backendspringboot:hse24
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://shoppingdb:5432/shoppingdb
+      SPRING_DATASOURCE_USERNAME: hse24
+      SPRING_DATASOURCE_PASSWORD: password
+    depends_on:
+      - shoppingdb
+    ports:
+      - "8080:8080"
+
+  frontendflask:
+    image: maeddes/frontendflask:hse24
+    #build:
+    #  context: ./frontend  # Assuming your frontend is in the 'frontend' directory
+    environment:
+      API_URL: "http://backendspringboot:8080/api/shopping"  # Use the API URL for communication between containers
+    ports:
+      - "5000:5000"
+    depends_on:
+      - backendspringboot
