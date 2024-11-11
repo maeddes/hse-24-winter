@@ -387,3 +387,55 @@ By the end of this lecture, students will be able to:
 ## 2024-11-11 **Spring Data and overall lab build**
 
    ![All in one](images/2024_11_11_lab_sketch.png)
+
+
+### **Content Overview**
+
+1. **Introduction to Persistence, ORM, Spring Data, and Spring Data JPA**
+   - **Persistence**: Covered the importance of persistence in applications, which allows data to be stored and retrieved across sessions and restarts. Explained why a database-backed approach is preferable for production applications compared to in-memory solutions like `ArrayList`.
+   - **Object-Relational Mapping (ORM)**: Introduced ORM as a technique for mapping application objects to database tables, simplifying data manipulation and reducing boilerplate code. Explained ORM’s role in enabling more seamless interactions with relational databases.
+   - **Spring Data**: Provided an overview of Spring Data, a Spring module that simplifies data access by reducing repetitive code and offering a consistent programming model across data storage types.
+   - **Spring Data JPA**: Discussed Spring Data JPA as a specialized implementation of Spring Data tailored to Java Persistence API (JPA) usage, allowing us to interact with relational databases using repository interfaces. Explained the benefits of JPA repositories, including CRUD operations and query generation.
+
+2. **Spring Boot Application Enhancements**  
+   - Transitioned the shopping list app from using an `ArrayList` for storage to a relational database with **Spring Data JPA** and **PostgreSQL** integration.
+   - Created endpoints for CRUD operations, implemented a repository interface to manage shopping list items, and added a custom `getItemByName` method.
+   - Added logic to handle duplicate item names by increasing their amount instead of creating new entries, leveraging Spring Data JPA’s powerful querying capabilities.
+
+3. **Flask Frontend Setup**  
+   - Developed a **Flask frontend** to interact with the Spring Boot API, allowing students to create a basic user interface for interacting with the shopping list.
+   - Configured the Flask app to read the **API URL** from an environment variable, supporting flexible connections to the backend environment.
+   - Verified that the Flask interface could successfully perform actions such as adding, updating, and deleting items on the shopping list by interacting with the REST API endpoints.
+
+4. **Dockerizing the Spring Boot and Flask Applications**  
+   - Guided students through creating a Docker image for the Spring Boot app and the Flask frontend, along with configuration of a **Docker Compose** file to orchestrate both services along with PostgreSQL.
+   - Demonstrated how **Docker Compose** enables easy deployment and configuration of multi-container applications by defining all components in a single, reusable setup file.
+   - Discussed best practices for containerizing the Spring Boot app with PostgreSQL for persistence and the Flask app for frontend interactions, ensuring portability and streamlined setup for the full application stack.
+
+---
+
+### **Objectives and Exercises**
+
+*Students should be able to:*
+
+- Explain the concepts of **persistence** and **ORM** and identify their importance in distributed, database-driven applications.
+- Set up **Spring Data JPA** to interact with a relational database and configure it using Docker Compose.
+- Describe the benefits of Dockerization for both frontend and backend applications and use **Docker Compose** to manage and deploy a complete multi-container setup.
+
+*Exercise*:
+Use this as a reference implementation to build your component as described in [Lab Exercise](./LABS.md)
+
+
+---
+
+### **Student/Review Questions**
+
+1. **What is Object-Relational Mapping (ORM), and why is it beneficial for a database-backed application?**  
+
+2. **Explain how Spring Data JPA helps in managing CRUD operations in a database.**  
+
+3. **How does Docker Compose facilitate the deployment and management of the Spring Boot app, Flask frontend, and PostgreSQL database in a single environment?**  
+
+4. **Describe the purpose of externalizing configuration, and explain how it was implemented in this lab using Docker and environment variables.**  
+
+5. **Why is enabling a non-localhost API connection important for a frontend service like Flask, and how does Docker Compose make this possible?**  
