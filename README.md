@@ -384,3 +384,6 @@ By the end of this lecture, students will be able to:
 
 ---
 
+## 2024-11-11 **Spring Data and overall lab build**
+
+   ![All in one](images/2024_11_11_lab_sketch.png)
