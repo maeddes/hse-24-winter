@@ -387,3 +387,52 @@ By the end of this lecture, students will be able to:
 ## 2024-11-11 **Spring Data and overall lab build**
 
    ![All in one](images/2024_11_11_lab_sketch.png)
+
+
+### **Content Overview**
+
+Certainly! Here’s the revised summary with a more concise structure for points 2, 3, and 4:
+
+---
+
+### **Content Overview**
+
+1. **Introduction to Persistence, ORM, Spring Data, and Spring Data JPA**
+   - **Persistence and ORM**: Discussed the importance of persistence for long-term data storage, introducing ORM as a way to map objects to relational database tables seamlessly.
+   - **Spring Data JPA**: Explored how Spring Data JPA simplifies data access through repository interfaces, enabling easy CRUD operations and custom queries without boilerplate code.
+
+2. **Enhancing the Spring Boot Application with PostgreSQL**  
+   - Transitioned the shopping list storage from `ArrayList` to a **PostgreSQL database** using Spring Data JPA, refining endpoints for CRUD operations and adding logic to update item quantities based on names.
+
+3. **Developing a Flask Frontend**  
+   - Built a **Flask-based frontend** for interacting with the Spring Boot API, configuring the Flask app to retrieve the **API URL** from environment variables and perform **CRUD** actions on shopping list items.
+
+4. **Dockerizing the Application Stack with Docker Compose**  
+   - Containerized both the Spring Boot and Flask apps using **Dockerfiles** alongside PostgreSQL and  using a single **Docker Compose file** to manage and deploy the full application stack in a multi-container environment.
+
+---
+
+### **Objectives and Exercises**
+
+*Students should be able to:*
+
+- Explain the concepts of **persistence** and **ORM** and identify their importance in distributed, database-driven applications.
+- Set up **Spring Data JPA** to interact with a relational database and configure it using Docker Compose.
+- Describe the benefits of Dockerization for both frontend and backend applications and use **Docker Compose** to manage and deploy a complete multi-container setup.
+
+*Exercise*:
+Use this as a reference implementation to build your component as described in [Lab Exercise](./LABS.md)
+
+---
+
+### **Student/Review Questions**
+
+1. **What is Object-Relational Mapping (ORM), and why is it beneficial for a database-backed application?**  
+
+2. **Explain how Spring Data JPA helps in managing CRUD operations in a database.**  
+
+3. **How does Docker Compose facilitate the deployment and management of the Spring Boot app, Flask frontend, and PostgreSQL database in a single environment?**  
+
+4. **Describe the purpose of externalizing configuration, and explain how it was implemented in this lab using Docker and environment variables.**  
+
+5. **Why is enabling a non-localhost API connection important for a frontend service like Flask, and how does Docker Compose make this possible?**  
