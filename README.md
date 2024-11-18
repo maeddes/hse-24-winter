@@ -436,3 +436,46 @@ Use this as a reference implementation to build your component as described in [
 4. **Describe the purpose of externalizing configuration, and explain how it was implemented in this lab using Docker and environment variables.**  
 
 5. **Why is enabling a non-localhost API connection important for a frontend service like Flask, and how does Docker Compose make this possible?**  
+
+## **2024-11-18 Advanced Multi Container Setup**
+
+   ![All in one - advanced](images/2024_11_18_advanced_multi_container.png)
+
+### **Content Overview**
+
+1. **Extending Docker Compose for Scaling and Load-Balancing**  
+   - Demonstrated how to scale services using Docker Compose to handle increased traffic or workloads.
+   - Explored Docker’s limitations in advanced network traffic control and routing options.
+
+   ![Possibilities with Docker](images/2024_11_18_docker_limits.png)
+
+2. **Introducing Nginx as a Reverse Proxy**  
+   - Configured Nginx as a reverse proxy to route traffic between the frontend and backend services efficiently.  
+   - Discussed its role in improving request handling and enabling basic load balancing.  
+
+3. **Alternatives to Nginx**  
+   - Briefly introduced other reverse proxy and load-balancing tools, such as **Envoy** and **HAProxy**, highlighting their use cases and differences compared to Nginx.
+
+4. **Adding Additional Services to the Docker Compose Network**  
+   - Showed how to extend the Docker Compose file by adding more containers and explained how they automatically join the shared network, simplifying service integration.
+
+---
+
+### **Objectives and Exercises**
+
+*Students should be able to:*
+
+- Configure and scale services in a Docker Compose environment for load balancing.  
+- Set up and utilize Nginx as a reverse proxy for routing and basic load balancing.  
+- Extend Docker Compose configurations with additional services and understand how they integrate into the network.  
+
+---
+
+### **Student/Review Questions**
+
+1. **How can you scale a service in Docker Compose, and what are the limitations of this approach?**  
+2. **Explain the role of a reverse proxy in a distributed application and why Nginx is a popular choice for this purpose.**  
+3. **What advantages do alternatives like Envoy or HAProxy offer over Nginx in certain use cases?**  
+4. **When adding a new service to a Docker Compose setup, how does Docker ensure it integrates into the network?**  
+5. **What network traffic limitations exist in Docker, and how can tools like reverse proxies help mitigate them?**
+
