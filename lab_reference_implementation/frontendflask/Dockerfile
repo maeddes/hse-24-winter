@@ -17,7 +17,7 @@ COPY . /app
 EXPOSE 5000
 
 # Set the environment variable for Flask to run in production mode
-ENV FLASK_ENV=production
+ENV FLASK_ENV=development
 
 # Run the Flask application
 CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]

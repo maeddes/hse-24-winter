@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  db: 
+    image: your_database_goes_here
+    environment:
+      your_db_config_goes_here
+    ports:
+
+  backend:
+    image: your_backend_goes_here
+    environment:
+      your_backend_config_goes_here (dynamic connection to the database)
+    depends_on:
+      - db
+
+  frontend:
+    image: your_frontend_goes_here
+    environment:
+      your_frontend_goes_here (dynamic connection to the backend)
+    ports:

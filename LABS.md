@@ -52,11 +52,12 @@ Put your names, repos and technologies into the spreadsheet. Don't reuse technol
 
 ### **Submission Checklist**
 
-0. Everything in an own git repo / Link in Spreadsheet.
+0. Everything in an own git repo / Link in Spreadsheet. Repo must be public.
 1. Application code implementing `REST_API.json` specifications.
 2. Dockerfile(s) and `docker-compose.yml`.
 3. Short documentation on 12-factor principle application.
 4. If applicable, Kubernetes manifest files.
 5. Code documentation (comments and/or README).
+   a. Provide instructions how to build, containerize and test app
 
 ---

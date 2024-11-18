@@ -2,6 +2,7 @@ package com.example.backendspringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,14 @@ public class ApiApplication {
 		return "Hi "+name+", you've found my API!";
 	}
 
+	@GetMapping("/hostname")
+    public ResponseEntity<String> getHostname() {
+        String hostname = System.getenv("HOSTNAME");
+        if (hostname == null || hostname.isEmpty()) {
+            hostname = "HOSTNAME environment variable is not set";
+        }
+        return ResponseEntity.ok(hostname);
+    }
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
 	}

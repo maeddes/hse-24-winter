@@ -1,0 +1,146 @@
+Certainly! Here's a guide to building a frontend using **Next.js** that connects to the shopping API, with server-side rendering (SSR) for fetching and displaying shopping items.
+
+---
+
+### **Step 1: Set Up a Next.js Project**
+1. Create a new Next.js project:
+   ```bash
+   npx create-next-app@latest shopping-frontend
+   cd shopping-frontend
+   ```
+
+2. Install necessary dependencies for API calls:
+   ```bash
+   npm install axios
+   ```
+
+---
+
+### **Step 2: Create a Page with Server-Side Rendering**
+Next.js allows you to fetch data on the server using the `getServerSideProps` function.
+
+1. Create a new page for displaying shopping items:
+   - File: `pages/index.js`
+   ```javascript
+   import axios from "axios";
+   import { useState } from "react";
+
+   export default function Home({ items, apiUrl }) {
+       const [newItem, setNewItem] = useState({ name: "", amount: "" });
+       const [error, setError] = useState("");
+
+       const handleAddItem = async (e) => {
+           e.preventDefault();
+           try {
+               const response = await axios.post(`${apiUrl}`, newItem);
+               if (response.status === 201 || response.status === 200) {
+                   window.location.reload(); // Reload to reflect the updated list
+               }
+           } catch (err) {
+               setError("Failed to add item. Please try again.");
+           }
+       };
+
+       return (
+           <div>
+               <h1>Shopping List</h1>
+               {error && <p style={{ color: "red" }}>{error}</p>}
+
+               <ul>
+                   {items.map((item) => (
+                       <li key={item.name}>
+                           {item.name}: {item.amount}
+                       </li>
+                   ))}
+               </ul>
+
+               <form onSubmit={handleAddItem}>
+                   <input
+                       type="text"
+                       placeholder="Item name"
+                       value={newItem.name}
+                       onChange={(e) =>
+                           setNewItem((prev) => ({ ...prev, name: e.target.value }))
+                       }
+                   />
+                   <input
+                       type="number"
+                       placeholder="Amount"
+                       value={newItem.amount}
+                       onChange={(e) =>
+                           setNewItem((prev) => ({ ...prev, amount: e.target.value }))
+                       }
+                   />
+                   <button type="submit">Add Item</button>
+               </form>
+           </div>
+       );
+   }
+
+   export async function getServerSideProps() {
+       const apiUrl = process.env.API_URL || "http://localhost:8080/api/shopping";
+       let items = [];
+       try {
+           const response = await axios.get(apiUrl);
+           items = response.data;
+       } catch (err) {
+           console.error("Error fetching data:", err);
+       }
+       return { props: { items, apiUrl } };
+   }
+   ```
+
+---
+
+### **Step 3: Set Environment Variables**
+1. Create an `.env.local` file in the root of the project:
+   ```
+   API_URL=http://localhost:8080/api/shopping
+   ```
+
+2. Restart the Next.js development server to apply the environment variable:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+### **Step 4: Start the Development Server**
+Run the Next.js app:
+```bash
+npm run dev
+```
+Visit `http://localhost:3000` to see the shopping list.
+
+---
+
+### **Key Features of This Implementation**
+1. **Server-Side Rendering**:
+   - Data is fetched in `getServerSideProps`, ensuring fresh data on every page request.
+   - Great for SEO and situations where the data changes frequently.
+
+2. **Client-Side Interactivity**:
+   - Users can add new items through a form.
+   - The page reloads after adding an item to reflect the changes.
+
+3. **Environment Variable for API URL**:
+   - Makes the API URL configurable, adhering to 12-factor principles.
+
+---
+
+### **Possible Enhancements**
+1. **Client-Side State Management**:
+   Use libraries like `React Query` or `SWR` for caching and syncing the frontend state with the backend.
+
+2. **Styling**:
+   Add styling using CSS modules, Tailwind CSS, or other frameworks.
+
+3. **Pagination**:
+   If the list grows large, implement pagination or infinite scrolling.
+
+4. **Error Handling**:
+   Provide more detailed error messages and fallback UI.
+
+---
+
+Let me know if you'd like help with any specific enhancements!
