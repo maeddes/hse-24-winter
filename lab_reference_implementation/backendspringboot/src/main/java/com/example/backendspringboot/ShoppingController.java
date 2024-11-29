@@ -91,7 +91,6 @@ public class ShoppingController {
             @RequestBody ShoppingItem updatedItem) {
                 return shoppingItemRepository.findByName(name)
                 .map(existingItem -> {
-                    existingItem.setName(updatedItem.getName());
                     existingItem.setAmount(updatedItem.getAmount());
                     shoppingItemRepository.save(existingItem);
                     return ResponseEntity.ok(existingItem);
