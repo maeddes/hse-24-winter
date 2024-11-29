@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List Manager</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
@@ -18,28 +18,41 @@
         {% endwith %}
 
         <h2>All Shopping Items</h2>
-        <ul>
-            {% for item in items %}
-                <li>{{ item.name }} - Amount: {{ item.amount }}</li>
-            {% endfor %}
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.amount }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
         <h2>Add a New Item</h2>
-        <form action="{{ url_for('add_item') }}" method="post">
+        <form action="{{ url_for('add_item') }}" method="post" class="formx">
             <input type="text" name="name" placeholder="Name" required>
             <input type="number" name="amount" placeholder="Amount" required>
             <button type="submit">Add Item</button>
         </form>
 
         <h2>Update Item</h2>
-        <form action="{{ url_for('update_item') }}" method="post">
+
+        <form action="{{ url_for('update_item') }}" method="post" class="formx">
             <input type="text" name="update_name" placeholder="Name of item to update" required>
             <input type="number" name="update_amount" placeholder="New amount" required>
             <button type="submit">Update Item</button>
         </form>
+        
 
         <h2>Delete Item</h2>
-        <form action="{{ url_for('delete_item') }}" method="post">
+        <form action="{{ url_for('delete_item') }}" method="post" class="formx">
             <input type="text" name="delete_name" placeholder="Name of item to delete" required>
             <button type="submit">Delete Item</button>
         </form>

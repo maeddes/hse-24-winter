@@ -1,21 +1,120 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
+    background-color: #f9f9f9;
+    color: #444;
+    line-height: 1.6;
 }
+
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 h2 {
     color: #333;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
+
 .alert {
-    padding: 10px;
-    margin-bottom: 10px;
-    color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
 }
-.alert.success { background-color: #4CAF50; }
-.alert.error { background-color: #f44336; }
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.error {
+    background-color: #f44336;
+}
+
 input, button {
-    margin: 5px 0;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input:focus, button:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Table container for centering */
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+td {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+tfoot {
+    background-color: #f4f4f4;
+}
+
+/* Formx styling */
+.formx {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.formx input, .formx button {
+    width: auto;  /* Override full-width */
+    padding: 10px;
+    font-size: 1rem;
 }
