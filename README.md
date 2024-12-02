@@ -527,4 +527,8 @@ Use this as a reference implementation to build your component as described in [
 
 ---
 
-Let me know if you'd like further adjustments!
+## **2024-11-11 Kubernetes Options and API Objects Review**
+
+![K8s Options](images/2024_12_02_Kubernetes_Options.png)
+
+![Important API Objects](images/2024_12_02_Kubernetes_Deployment_API_objects.png)

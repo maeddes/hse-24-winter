@@ -1,0 +1,27 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgresdb
+  labels:
+    app: postgresdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgresdb
+  template:
+    metadata:
+      labels:
+        app: postgresdb
+    spec:
+      containers:
+      - name: postgresdb
+        image: postgres:latest
+        env:
+        - name: POSTGRES_USER
+          value: hse24
+        - name: POSTGRES_PASSWORD
+          value: password
+        - name: POSTGRES_DB
+          value: shoppingdb
