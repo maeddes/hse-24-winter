@@ -533,13 +533,14 @@ Use this as a reference implementation to build your component as described in [
 
 ![K8s Options](images/2024_12_02_Kubernetes_Options.png)
 
-![Important API Objects](images/2024_12_02_Kubernetes_Deployment_API_objects.png)
-
 ### **Content Overview**  
 
 This lecture provides an introduction to Kubernetes deployment options and revisits essential Kubernetes API objects in greater detail. Students will explore free Kubernetes trials offered by major cloud providers, local deployment tools like Minikube and Kind, and how to use Kubernetes in cloud-based IDEs like GitHub Codespaces. The session also deepens understanding of fundamental API objects such as Pods, Deployments, and Services, equipping students with practical knowledge for managing containerized applications in Kubernetes.  
 
----  
+---
+
+![Important API Objects](images/2024_12_02_Kubernetes_Deployment_API_objects.png)
+
 ### **Learning Objectives**  
 
 By the end of this lecture, students will be able to:  
