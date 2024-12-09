@@ -34,6 +34,15 @@ public class ApiApplication {
         }
         return ResponseEntity.ok(hostname);
     }
+
+	@GetMapping("/crash")
+	public String crashTheApp(){
+
+		//System.exit(1);
+		return "crash fixed";
+
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
 	}

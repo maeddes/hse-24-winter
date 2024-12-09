@@ -6,7 +6,7 @@ metadata:
     app: backendspringboot
   name: backendspringboot
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: backendspringboot
@@ -17,8 +17,15 @@ spec:
         app: backendspringboot
     spec:
       containers:
-      - image: maeddes/backendspringboot:hse24
+      - image: maeddes/backendspringboot:hse24patch
         name: backendspringboot
+        imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+            path: /hello
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 1
         env:
         - name: SPRING_DATASOURCE_URL
           value: jdbc:postgresql://shoppingdb:5432/shoppingdb

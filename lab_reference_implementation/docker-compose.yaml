@@ -11,6 +11,8 @@ services:
 
   backendspringboot:
     image: maeddes/backendspringboot:hse24
+    build:
+      context: ./backendspringboot
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://shoppingdb:5432/shoppingdb
       SPRING_DATASOURCE_USERNAME: hse24

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frontendflask
+  name: frontendflask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontendflask
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: frontendflask
+    spec:
+      containers:
+      - image: maeddes/frontendflask:hse24
+        name: frontendflask
+        env:
+        - name: API_URL
+          value: http://backendspringboot:8080/api/shopping
+        resources: {}
+status: {}
