@@ -479,7 +479,7 @@ Use this as a reference implementation to build your component as described in [
 4. **When adding a new service to a Docker Compose setup, how does Docker ensure it integrates into the network?**  
 5. **What network traffic limitations exist in Docker, and how can tools like reverse proxies help mitigate them?**
 
-## **2024-11-11Introduction to Kubernetes**
+## **2024-11-11 Introduction to Kubernetes**
 
 ### **Content Overview**
 
@@ -490,6 +490,8 @@ Use this as a reference implementation to build your component as described in [
 2. **Kubernetes Cluster Architecture**  
    - **Control Plane and Worker Nodes**: Explanation of the roles and responsibilities of the control plane and worker nodes in a Kubernetes cluster.  
    - **Key Components**: Overview of critical components like `kube-apiserver`, `etcd`, `kube-scheduler`, `kube-controller-manager`, and `kubelet`.  
+
+![Kubernetes High Level Architecture](images/2024_11_11_kubernetes_architecture.png)
 
 3. **Declarative Working Mode**  
    - **Configuration as Code**: Introduction to Kubernetes' declarative approach for managing application state using YAML manifests.  
