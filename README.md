@@ -479,7 +479,7 @@ Use this as a reference implementation to build your component as described in [
 4. **When adding a new service to a Docker Compose setup, how does Docker ensure it integrates into the network?**  
 5. **What network traffic limitations exist in Docker, and how can tools like reverse proxies help mitigate them?**
 
-## **2024-11-11Introduction to Kubernetes**
+## **2024-11-11 Introduction to Kubernetes**
 
 ### **Content Overview**
 
@@ -490,6 +490,8 @@ Use this as a reference implementation to build your component as described in [
 2. **Kubernetes Cluster Architecture**  
    - **Control Plane and Worker Nodes**: Explanation of the roles and responsibilities of the control plane and worker nodes in a Kubernetes cluster.  
    - **Key Components**: Overview of critical components like `kube-apiserver`, `etcd`, `kube-scheduler`, `kube-controller-manager`, and `kubelet`.  
+
+![Kubernetes High Level Architecture](images/2024_11_11_kubernetes_architecture.png)
 
 3. **Declarative Working Mode**  
    - **Configuration as Code**: Introduction to Kubernetes' declarative approach for managing application state using YAML manifests.  
@@ -531,4 +533,27 @@ Use this as a reference implementation to build your component as described in [
 
 ![K8s Options](images/2024_12_02_Kubernetes_Options.png)
 
+### **Content Overview**  
+
+This lecture provides an introduction to Kubernetes deployment options and revisits essential Kubernetes API objects in greater detail. Students will explore free Kubernetes trials offered by major cloud providers, local deployment tools like Minikube and Kind, and how to use Kubernetes in cloud-based IDEs like GitHub Codespaces. The session also deepens understanding of fundamental API objects such as Pods, Deployments, and Services, equipping students with practical knowledge for managing containerized applications in Kubernetes.  
+
+---
+
 ![Important API Objects](images/2024_12_02_Kubernetes_Deployment_API_objects.png)
+
+### **Learning Objectives**  
+
+By the end of this lecture, students will be able to:  
+1. Identify and compare Kubernetes deployment options, including cloud trials and local setups.  
+2. Set up a Kubernetes cluster locally using tools like Minikube or Kind, and within GitHub Codespaces.  
+3. Describe the roles and relationships of basic Kubernetes API objects, including Pods, Deployments, and Services.  
+4. Deploy and manage containerized applications using Kubernetes API objects.  
+
+---  
+### **Student/Review Questions**  
+
+1. What are the advantages and limitations of using Kubernetes free trials from cloud providers compared to local tools like Minikube?  
+2. How does Minikube enable Kubernetes functionality within a GitHub Codespaces environment?  
+3. What is the role of a Pod in Kubernetes, and how does it differ from a Deployment?  
+4. How do Services enable communication between Kubernetes Pods and external clients?  
+5. How can you use a Deployment to ensure high availability for an application in Kubernetes?  

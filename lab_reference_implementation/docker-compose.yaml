@@ -24,8 +24,8 @@ services:
 
   frontendflask:
     image: maeddes/frontendflask:hse24
-    #build:
-    #  context: ./frontend  # Assuming your frontend is in the 'frontend' directory
+    build:
+      context: ./frontendflask  # Assuming your frontend is in the 'frontend' directory
     environment:
       API_URL: "http://backendspringboot:8080/api/shopping"  # Use the API URL for communication between containers
     ports:
