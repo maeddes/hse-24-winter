@@ -557,3 +557,7 @@ By the end of this lecture, students will be able to:
 3. What is the role of a Pod in Kubernetes, and how does it differ from a Deployment?  
 4. How do Services enable communication between Kubernetes Pods and external clients?  
 5. How can you use a Deployment to ensure high availability for an application in Kubernetes?  
+
+## **2024-12-09 Kunernetes in Action**
+
+![Kubernetes Multi App landscape](images/2024_12_09_Kubernetes_multi_objects.png)
