@@ -67,8 +67,8 @@ By the end of this lecture, students will be able to:
 - Get a GitHub or GitLab or Bitbucket account
 
 ## **2024 / 09 / 30 - Overview of distributed systems implementation options - Frameworks, Kubernetes, Service Meshes (sidecar-based and eBPF-based)**
-
 ## **2024 / 09 / 30 - Cloud-based IDEs**
+
 ### **Content Overview**
 
 1. **Reasons for Distributed Systems: Heterogeneity and Resilience**
@@ -387,13 +387,6 @@ By the end of this lecture, students will be able to:
 ## 2024-11-11 **Spring Data and overall lab build**
 
    ![All in one](images/2024_11_11_lab_sketch.png)
-
-
-### **Content Overview**
-
-Certainly! Here’s the revised summary with a more concise structure for points 2, 3, and 4:
-
----
 
 ### **Content Overview**
 
