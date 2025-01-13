@@ -555,3 +555,32 @@ By the end of this lecture, students will be able to:
 ## **2024-12-09 Kubernetes in Action**
 
 ![Kubernetes Multi App landscape](images/2024_12_09_Kubernetes_multi_objects.png)
+
+![Scenario 1](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_20_Kubernetes_Scenarios_Recovery_From_Failure.png)
+
+![Scenario 2](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_20_Kubernetes_Scenarios_Load_Balancing.png)
+
+![Scenario 3](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_20_Kubernetes_Scenarios_Zero_Downtime_Update.png)
+
+In this final Kubernetes lecture, wd explored key concepts to manage and scale applications effectively. The lecture covered the three main Kubernetes Service types—ClusterIP, NodePort, and LoadBalancer—and their use cases. Students also learned how to scale instances in a Deployment, achieving automatic load-balancing across Pods using a ClusterIP Service. The session demonstrated how Kubernetes handles automatic updates of applications through rolling updates in Deployments and how it ensures high availability by automatically recovering failed instances.  
+
+---  
+### **Learning Objectives**  
+
+By the end of this lecture, students will be able to:  
+1. Differentiate between the three main Kubernetes Service types: ClusterIP, NodePort, and LoadBalancer.  
+2. Scale a Kubernetes Deployment to handle increased load and distribute traffic automatically across instances.  
+3. Implement rolling updates in a Deployment to update applications without downtime.  
+4. Explain how Kubernetes ensures application stability by automatically recovering from Pod failures.  
+
+---  
+### **Student/Review Questions**  
+
+1. What are the differences between ClusterIP, NodePort, and LoadBalancer Services in Kubernetes?  
+2. How does Kubernetes automatically distribute incoming traffic across multiple instances in a Deployment?  
+3. How can you scale a Deployment to add more instances of your application?  
+4. What is a rolling update in Kubernetes, and why is it important for managing application updates?  
+5. How does Kubernetes detect and recover from crashed or failed Pods automatically?  
+6. Why is load-balancing critical in distributed systems, and how does Kubernetes achieve this with Services?  
+
+
