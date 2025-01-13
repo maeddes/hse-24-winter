@@ -48,8 +48,11 @@ By the end of this lecture, students will be able to:
 4. What is the CNCF, and why is it important in the context of cloud-native technologies?
 #### For later:
 5. How does Kubernetes help in managing containerized applications in cloud-native environments?
-6. What is eBPF, and what advantages does it provide in terms of system monitoring and security?
-7. Explain the role of OpenTelemetry in modern cloud systems. How does it contribute to observability?
+
+
+### **Exam Disclaimer**
+
+- Cilium, eBPF and OpenTelemetry are not exam relevant
 
 ---
 
@@ -102,8 +105,6 @@ By the end of this lecture, students will be able to:
 ### **Student/Review Questions**
 1. Why are heterogeneity and resilience important factors in the design of distributed systems?
 2. What are the main differences between a software framework (e.g., Spring Boot) and a platform (e.g., Kubernetes) when building distributed systems?
-3. How do service meshes like Istio or Linkerd improve communication in microservices architectures?
-4. What is eBPF, and how does it enhance service mesh capabilities in modern cloud-native systems?
 5. Analyze GitHub Codespaces and Gitpod. What are the key features that make them suitable for developing distributed systems?
 6. What are the main benefits of using cloud-based IDEs compared to traditional, local development environments?
 
