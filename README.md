@@ -308,7 +308,7 @@ By the end of this lecture, students will be able to:
 
 ### **ABOVE ALL**
 
-Be able to relate the concepts of CAP theorem and the 12-factor apps to the technologies we are covering in the lecture,
+Be able to relate the concepts of the NIST definition, the abstraction layers, the CAP theorem, Richardson's model and the 12-factor apps to the technologies we are covering in the lecture,
 e.g. how do technologies like Spring Boot (or other frameworks/languages), Docker, Kubernetes incorporate or implement those aspects
 
 ---
